@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto&display=swap");
 
 :root {
   --color-base: #ffffff;
   --color-border: #b301aa;
   --color-fst-point: #ef5231;
   --color-sec-point: #f7c053;
-  --color-point-text: #b301aa;
-  --color-simple-text: #ffffff;
-  --color-error-text: #ff0000;
+  --color-text-point: #b301aa;
+  --color-text-simple: #ffffff;
+  --color-text-error: #ff0000;
 
-  --font-base: "Roboto Condensed", sans-serif;
+  --font-Eng-base: "Roboto Condensed", "Noto Sans KR", sans-serif;
 }
 * {
-  color: var(--color-point-text);
-  font-family: var(--font-base);
+  color: var(--color-text-point);
+  font-family: var(--font-Eng-base);
 }
 h2 {
   font-size: 2.5rem;
@@ -31,11 +31,12 @@ div .content_box {
   background-color: var(--color-base);
   width: 80vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 div .login_box {
-  margin-top: 10vh;
+  margin: 0 auto;
   padding: 5vw;
   height: 60vh;
   width: 60vw;
@@ -46,6 +47,26 @@ div .login_box {
   justify-content: center;
   border-radius: 5%;
 }
+
+div .error_page {
+  background-color: var(--color-base);
+  border-radius: 20px;
+  height: 30vh;
+  text-align: center;
+  padding: 20px 10px;
+
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error_title {
+  color: var(--color-text-simple);
+  font-size: 5vh;
+}
+
 input[type="email"],
 input[type="password"] {
   display: block;
@@ -65,29 +86,41 @@ div .btn_box {
 }
 
 button {
-  width: 120px;
-  height: 35px;
   border-radius: 10px;
   border: var(--color-border) solid 2px;
   background-color: var(--color-base);
-  color: var(--color-point-text);
+  color: var(--color-text-point);
   font-size: 1.2rem;
+}
+button .login_btn {
+  width: 120px;
+  height: 35px;
 }
 
 button:hover {
   background-color: var(--color-border);
-  color: var(--color-simple-text);
+  color: var(--color-text-simple);
 }
 
 .cat_image {
   width: 30vw;
   height: 30vw;
-  border-radius: 5%;
+  border-radius: 25px;
 }
 
 .error_msg {
   font-size: 2em;
-  font-family: var(--font-base);
-  color: var(--color-error-text);
+  font-family: var(--font-Eng-base);
+  color: var(--color-text-error);
   padding: 10px;
+}
+
+hr {
+  margin: 15px auto;
+  border: var(--color-text-simple) solid 3px;
+  border-radius: 25px;
+}
+
+.line_point {
+  border: var(--color-text-point) solid 3px;
 }

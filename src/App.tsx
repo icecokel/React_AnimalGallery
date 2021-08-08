@@ -1,11 +1,17 @@
 import "./Style.css";
-import SignIn from "./components/main/SignIn";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import PageNotFound from "./components/common/PageNotFound";
+import Main from "./components/main/Main";
 
 const App = (props: any) => {
   return (
-    <div className="main">
-      <SignIn></SignIn>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route component={PageNotFound} />
+      </Switch>
+    </Router>
   );
 };
 
