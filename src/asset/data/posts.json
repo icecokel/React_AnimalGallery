@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "title": "두번쨰",
+      "height": 6,
+      "width": 4,
+      "contents": "두비두비"
+    },
+    {
+      "title": "세번쨰",
+      "height": 3,
+      "width": 5,
+      "contents": "TEST"
+    },
+    {
+      "title": "네번쨰",
+      "height": 8,
+      "width": 8,
+      "contents": "개머싯다"
+    },
+    {
+      "title": "다섯번쨰",
+      "height": 7,
+      "width": 6,
+      "contents": "어케한거지"
+    },
+    {
+      "title": "여섯번쨰",
+      "height": 4,
+      "width": 5,
+      "contents": "신기방기해 정말루"
+    },
+    {
+      "title": "일곱번쨰",
+      "height": 10,
+      "width": 5,
+      "contents": "진짜 이거 공부하느라 힘들었다"
+    },
+    {
+      "title": "여덟번쨰",
+      "height": 20,
+      "width": 5,
+      "contents": "오뚜기밥"
+    },
+    {
+      "title": "아홉번쨰",
+      "height": 4,
+      "width": 6,
+      "contents": "샤라라라라라라라라라라라랄"
+    }
+  ]
+}
