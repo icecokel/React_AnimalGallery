@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Palette+Mosaic&family=Roboto&display=swap");
 
 :root {
   --color-base: #ffffff;
@@ -10,6 +10,7 @@
   --color-text-error: #ff0000;
 
   --font-Eng-base: "Roboto Condensed", "Noto Sans KR", sans-serif;
+  --font-logo-base: "Palette Mosaic", cursive;
 }
 * {
   color: var(--color-text-point);
@@ -18,15 +19,25 @@
 h2 {
   font-size: 2.5rem;
 }
+.center {
+  margin: 0 auto;
+}
 
 div .main {
   width: 100vw;
   height: 100vh;
   background-image: url(./asset/images/backGroundImage.jpg);
+}
+.flex_row {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
-
+.flex_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
 div .content_box {
   background-color: var(--color-base);
   width: 80vw;
@@ -36,7 +47,6 @@ div .content_box {
 }
 
 div .login_box {
-  margin: 0 auto;
   padding: 5vw;
   height: 60vh;
   width: 60vw;
@@ -48,13 +58,12 @@ div .login_box {
   border-radius: 5%;
 }
 
-div .error_page {
+div .error_box {
   background-color: var(--color-base);
   border-radius: 20px;
   height: 30vh;
   text-align: center;
   padding: 20px 10px;
-
   font-size: 1.25em;
   display: flex;
   flex-direction: column;
@@ -123,4 +132,27 @@ hr {
 
 .line_point {
   border: var(--color-text-point) solid 3px;
+}
+
+.header_box {
+  width: auto;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-base);
+}
+
+.logo {
+  font-family: var(--font-logo-base);
+  font-size: 2.2rem;
+  color: var(--color-text-point);
+  border: var(--color-fst-point) solid 2px;
+  margin: 10px;
+}
+
+div .loginInfo_box {
+  text-align: center;
+  width: 15vw;
 }

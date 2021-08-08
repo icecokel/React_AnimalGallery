@@ -8,7 +8,7 @@ const PageNotFound = (props: any) => {
       <div>
         <span className="error_title"> 페이지를 찾을 수 없습니다.</span>
         <hr className="line_simple" />
-        <div className="error_page">
+        <div className="error_box">
           요청하신 페이지를 찾을 수 없습니다.({pathname.slice(1)})
           <button
             className="center"

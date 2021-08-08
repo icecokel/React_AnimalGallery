@@ -30,7 +30,6 @@ const SignIn = (props: any) => {
       })
     ) {
       LoginSessionUtil.login(accountInfo.email, true);
-      alert("Succese");
       props.history.goBack();
     } else {
       setErrorMessage({ account: true });
@@ -38,9 +37,9 @@ const SignIn = (props: any) => {
   };
 
   return (
-    <div className="main">
+    <div className="main flex_row">
       <div className="content_box">
-        <div className="login_box">
+        <div className="login_box center">
           <img src={Cat} className="cat_image" />
           <h2>Login Cats Gallery</h2>
           <ErrorMessage
