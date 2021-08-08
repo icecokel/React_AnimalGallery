@@ -22,7 +22,7 @@ const Logo = (props: any) => {
         history.push("/");
       }}
     >
-      20201225
+      20210808
     </label>
   );
 };
@@ -39,7 +39,7 @@ const SignInInfo = (props: any) => {
 
   useEffect(() => {
     setUserInfo(LoginSessionUtil.getUserinfo);
-  });
+  }, []);
   const onClickLogout = () => {
     LoginSessionUtil.logout();
     history.push("/signin");

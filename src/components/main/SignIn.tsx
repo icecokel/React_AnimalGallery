@@ -38,39 +38,41 @@ const SignIn = (props: any) => {
 
   return (
     <div className="main flex_row">
-      <div className="content_box">
-        <div className="login_box center">
-          <img src={Cat} className="cat_image" />
-          <h2>Login Cats Gallery</h2>
-          <ErrorMessage
-            text="이메일 또는 패스워드가 일치 하지 않습니다."
-            isShowing={errorMessage.account}
-          />
-          <div>
-            <input
-              type="email"
-              className="input_id"
-              placeholder="Enter Your Email..."
-              onChange={(e: any) => {
-                const { value } = e.target;
-                setAccountInfo({ ...accountInfo, email: value });
-              }}
+      <div className="flex_column">
+        <div className="content_box">
+          <div className="login_box center">
+            <img src={Cat} className="cat_image" />
+            <h2>Login Animal Gallery</h2>
+            <ErrorMessage
+              text="이메일 또는 패스워드가 일치 하지 않습니다."
+              isShowing={errorMessage.account}
             />
-            <input
-              type="password"
-              className="input_id"
-              placeholder="Enter Your Password..."
-              onChange={(e) => {
-                const { value } = e.target;
-                setAccountInfo({ ...accountInfo, password: value });
-              }}
-            />
-          </div>
-          <div className="btn_box">
-            <button className="login_btn" onClick={onClickSignIn}>
-              sign in
-            </button>
-            <button className="login_btn">sign up</button>
+            <div>
+              <input
+                type="email"
+                className="input_id"
+                placeholder="Enter Your Email..."
+                onChange={(e: any) => {
+                  const { value } = e.target;
+                  setAccountInfo({ ...accountInfo, email: value });
+                }}
+              />
+              <input
+                type="password"
+                className="input_id"
+                placeholder="Enter Your Password..."
+                onChange={(e) => {
+                  const { value } = e.target;
+                  setAccountInfo({ ...accountInfo, password: value });
+                }}
+              />
+            </div>
+            <div className="btn_box">
+              <button className="login_btn" onClick={onClickSignIn}>
+                sign in
+              </button>
+              <button className="login_btn">sign up</button>
+            </div>
           </div>
         </div>
       </div>

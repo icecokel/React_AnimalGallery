@@ -3,8 +3,11 @@
 :root {
   --color-base: #ffffff;
   --color-border: #b301aa;
-  --color-fst-point: #ef5231;
-  --color-sec-point: #f7c053;
+  --color-1st-point: #e7824c;
+  --color-2bd-point: #dd564a;
+  --color-3bd-point: #cb1452;
+  --color-4th-point: #c00266;
+  --color-5th-point: #bc028b;
   --color-text-point: #b301aa;
   --color-text-simple: #ffffff;
   --color-text-error: #ff0000;
@@ -18,6 +21,15 @@
 }
 h2 {
   font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1rem;
 }
 .center {
   margin: 0 auto;
@@ -34,9 +46,14 @@ div .main {
   justify-content: center;
 }
 .flex_column {
+  margin-top: 3vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
+}
+
+.text_simple {
+  color: var(--color-text-simple);
 }
 div .content_box {
   background-color: var(--color-base);
@@ -44,6 +61,8 @@ div .content_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 5vh;
 }
 
 div .login_box {
@@ -55,7 +74,8 @@ div .login_box {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 5%;
+  border-radius: 10px;
+  margin: 5vh auto;
 }
 
 div .error_box {
@@ -99,7 +119,7 @@ button {
   border: var(--color-border) solid 2px;
   background-color: var(--color-base);
   color: var(--color-text-point);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 button .login_btn {
   width: 120px;
@@ -124,20 +144,28 @@ button:hover {
   padding: 10px;
 }
 
-hr {
+hr .line_white {
   margin: 15px auto;
   border: var(--color-text-simple) solid 3px;
   border-radius: 25px;
 }
 
-.line_point {
+hr .line_point {
   border: var(--color-text-point) solid 3px;
+}
+
+hr .line_simple {
+  width: 90%;
+  border: var(--color-text-simple) solid 1px;
+  border-radius: 25px;
 }
 
 .header_box {
   width: auto;
   height: 12vh;
   display: flex;
+  margin: 1vh 0;
+  border-radius: 10px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -147,12 +175,53 @@ hr {
 .logo {
   font-family: var(--font-logo-base);
   font-size: 2.2rem;
+  border-radius: 10px;
   color: var(--color-text-point);
-  border: var(--color-fst-point) solid 2px;
+  border: var(--color-1st-point) solid 2px;
   margin: 10px;
 }
 
 div .loginInfo_box {
   text-align: center;
   width: 15vw;
+}
+
+div .grid_conteiner {
+  padding: 10px;
+  display: grid;
+  height: 100%;
+  grid-template: repeat(20, 15px) / repeat(20, 15px);
+  grid-auto-columns: 15px;
+  grid-auto-rows: 15px;
+  grid-auto-flow: column dense;
+  gap: 15px;
+}
+div .grid_item {
+  width: 95%;
+  height: 95%;
+  padding: 2.5%;
+  border-radius: 10px;
+}
+
+.grid_item:nth-child(1n) {
+  background-color: var(--color-1st-point);
+}
+.grid_item:nth-child(2n) {
+  background-color: var(--color-2bd-point);
+}
+.grid_item:nth-child(3n) {
+  background-color: var(--color-3bd-point);
+}
+.grid_item:nth-child(4n) {
+  background-color: var(--color-4th-point);
+}
+.grid_item:nth-child(5n) {
+  background-color: var(--color-5th-point);
+}
+
+div .post_title {
+  font-size: 1.2em;
+}
+div .post_contents {
+  font-size: 1em;
 }
