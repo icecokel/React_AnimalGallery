@@ -60,10 +60,10 @@ const SignIn = (props: any) => {
               setAccountInfo({ ...accountInfo, password: value });
             }}
           />
-          <div className="btn_box">
-            <button onClick={onClickSignIn}>sign in</button>
-            <button>sign up</button>
-          </div>
+        </div>
+        <div className="btn_box">
+          <button onClick={onClickSignIn}>sign in</button>
+          <button>sign up</button>
         </div>
       </div>
     </div>
