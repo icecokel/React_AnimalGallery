@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,300;1,400&display=swap");
+
+:root {
+  --color-base: #ffffff;
+  --color-border: #b301aa;
+  --color-fst-point: #ef5231;
+  --color-sec-point: #f7c053;
+  --color-point-text: #b301aa;
+  --color-simple-text: #ffffff;
+  --color-error-text: #ff0000;
+
+  --font-base: "Roboto Condensed", sans-serif;
+}
+* {
+  color: var(--color-point-text);
+  font-family: var(--font-base);
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+div .main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./asset/images/backGroundImage.jpg);
+  display: flex;
+  justify-content: center;
+}
+
+div .content_box {
+  background-color: var(--color-base);
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+}
+
+div .login_box {
+  margin-top: 10vh;
+  padding: 3vw;
+  height: 40vh;
+  width: 40vh;
+  border: var(--color-border) solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+}
+
+div .btn_box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2vh;
+}
+input[type="email"],
+input[type="password"] {
+  display: block;
+  border-radius: 7.5px;
+  border: var(--color-border) solid 2px;
+  width: 500px;
+  height: 1.5vh;
+  margin: 10px 10px 10px 10px;
+  color: black;
+}
+
+button {
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  border: var(--color-border) solid 2px;
+  background-color: var(--color-base);
+  color: var(--color-point-text);
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: var(--color-border);
+  color: var(--color-simple-text);
+}
+
+.cat_image {
+  width: 350px;
+  border-radius: 5%;
+}
+
+.error_msg {
+  font-size: 2.5em;
+  font-family: var(--font-base);
+  color: var(--color-error-text);
+  padding: 10px;
+}
