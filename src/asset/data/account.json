@@ -1,3 +1,5 @@
 {
-  "accountList": [{ "id": "admin", "password": "1" }]
+  "accountList": [
+    { "email": "admin@ice.com", "password": "1", "username": "관리자" }
+  ]
 }
