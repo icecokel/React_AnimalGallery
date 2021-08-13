@@ -4,6 +4,10 @@ const session = sessionStorage.getItem("account") ?? `{ "isLogin": false }`;
 const accountInfo = JSON.parse(session);
 
 const LoginSessionUtil = {
+  getAccount: () => {
+    const session = sessionStorage.getItem("account") ?? `{ "isLogin": false }`;
+    return JSON.parse(session);
+  },
   login: async (email: string, isLogin: boolean) => {
     const loginTime = new Date();
     const username = Account.accountList.find((item: any) => {
@@ -16,9 +20,10 @@ const LoginSessionUtil = {
     sessionStorage.removeItem("account");
   },
   checkLogin: () => {
-    return accountInfo.isLogin;
+    return LoginSessionUtil.getAccount().isLogin;
   },
   getUserinfo: () => {
+    const accountInfo = LoginSessionUtil.getAccount();
     const res = {
       username: accountInfo.username,
       loginTime: accountInfo.loginTime,

@@ -2,33 +2,45 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import LoginSessionUtil from "../../util/LoginSessionUtil";
+import Tabs from "./Tabs";
 
 const Header = (props: any) => {
   return (
-    <div className="header_box">
-      <Logo />
-      <SearchBar />
-      <SignInInfo />
-    </div>
+    <>
+      <header className="header_box">
+        <Logo />
+        <SearchBar />
+        <SignInInfo />
+      </header>
+      <Tabs />
+    </>
   );
 };
 
 const Logo = (props: any) => {
   const history = useHistory();
+  const onClickMenu = () => {
+    const searchBar = document.getElementsByClassName("search_bar");
+    const loginInfoBox = document.getElementsByClassName("loginInfo_box");
+  };
   return (
-    <label
-      className="logo"
-      onClick={() => {
-        history.push("/");
-      }}
-    >
-      20210808
-    </label>
+    <div className="logo_box">
+      <label
+        onClick={() => {
+          history.push("/");
+        }}
+      >
+        20210808
+      </label>
+      <div className="menu" onClick={onClickMenu}>
+        三
+      </div>
+    </div>
   );
 };
 
 const SearchBar = () => {
-  return <div> 검색창</div>;
+  return <div className="search_bar"> 검색창</div>;
 };
 const SignInInfo = (props: any) => {
   const history = useHistory();
@@ -47,7 +59,9 @@ const SignInInfo = (props: any) => {
   return (
     <div className="loginInfo_box">
       <div>{userInfo.username}</div>
-      <div>{moment(new Date(userInfo.loginTime)).format("MM월DD일 HH:mm")}</div>
+      <span>
+        {moment(new Date(userInfo.loginTime)).format("MM월DD일 HH:mm")}
+      </span>
       <button onClick={onClickLogout}>로그아웃</button>
     </div>
   );

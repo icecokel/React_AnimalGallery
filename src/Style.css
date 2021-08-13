@@ -2,7 +2,7 @@
 
 :root {
   --color-base: #ffffff;
-  --color-border: #b301aa;
+  --color-point: #b301aa;
   --color-1st-point: #e7824c;
   --color-2bd-point: #dd564a;
   --color-3bd-point: #cb1452;
@@ -35,7 +35,7 @@ h5 {
   margin: 0 auto;
 }
 
-div .main {
+.main {
   width: 100vw;
   height: 100vh;
   background-image: url(./asset/images/backGroundImage.jpg);
@@ -55,21 +55,20 @@ div .main {
 .text_simple {
   color: var(--color-text-simple);
 }
-div .content_box {
+.content_box {
   background-color: var(--color-base);
   width: 80vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 10px;
   margin-bottom: 5vh;
+  min-width: 90vw;
+  min-height: 70vh;
 }
 
-div .login_box {
+.login_box {
   padding: 5vw;
   height: 60vh;
-  width: 60vw;
-  border: var(--color-border) solid 2px;
+  width: 60vh;
+  border: var(--color-point) solid 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +77,7 @@ div .login_box {
   margin: 5vh auto;
 }
 
-div .error_box {
+.error_box {
   background-color: var(--color-base);
   border-radius: 20px;
   height: 30vh;
@@ -100,14 +99,14 @@ input[type="email"],
 input[type="password"] {
   display: block;
   border-radius: 7.5px;
-  border: var(--color-border) solid 2px;
+  border: var(--color-point) solid 2px;
   width: 45vw;
   height: 25px;
   margin: 10px 10px 10px 10px;
   color: black;
 }
 
-div .btn_box {
+.btn_box {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -116,18 +115,18 @@ div .btn_box {
 
 button {
   border-radius: 10px;
-  border: var(--color-border) solid 2px;
+  border: var(--color-point) solid 2px;
   background-color: var(--color-base);
   color: var(--color-text-point);
   font-size: 1.1rem;
 }
-button .login_btn {
+.login_btn {
   width: 120px;
   height: 35px;
 }
 
 button:hover {
-  background-color: var(--color-border);
+  background-color: var(--color-point);
   color: var(--color-text-simple);
 }
 
@@ -144,17 +143,17 @@ button:hover {
   padding: 10px;
 }
 
-hr .line_white {
+.line_white {
   margin: 15px auto;
   border: var(--color-text-simple) solid 3px;
   border-radius: 25px;
 }
 
-hr .line_point {
+.line_point {
   border: var(--color-text-point) solid 3px;
 }
 
-hr .line_simple {
+.line_simple {
   width: 90%;
   border: var(--color-text-simple) solid 1px;
   border-radius: 25px;
@@ -172,21 +171,33 @@ hr .line_simple {
   background-color: var(--color-base);
 }
 
-.logo {
-  font-family: var(--font-logo-base);
+.logo_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_box label {
   font-size: 2.2rem;
   border-radius: 10px;
+  font-family: var(--font-logo-base);
   color: var(--color-text-point);
   border: var(--color-1st-point) solid 2px;
   margin: 10px;
 }
+.search_bar {
+  background-color: var(--color-base);
+  text-align: center;
+}
 
-div .loginInfo_box {
+.loginInfo_box {
+  width: 100%;
+  background-color: var(--color-base);
   text-align: center;
   width: 15vw;
 }
 
-div .grid_conteiner {
+.grid_conteiner {
   padding: 10px;
   display: grid;
   height: 100%;
@@ -196,7 +207,7 @@ div .grid_conteiner {
   grid-auto-flow: column dense;
   gap: 15px;
 }
-div .grid_item {
+.grid_item {
   width: 95%;
   height: 95%;
   padding: 2.5%;
@@ -219,9 +230,95 @@ div .grid_item {
   background-color: var(--color-5th-point);
 }
 
-div .post_title {
+.post_title {
   font-size: 1.2em;
 }
-div .post_contents {
+.post_contents {
   font-size: 1em;
+}
+
+.tab_conteiner {
+  display: flex;
+  padding-left: 0px;
+  list-style: none;
+  justify-content: center;
+}
+.tab_item {
+  margin: 0 5px;
+}
+
+.tab_item label {
+  padding: 8px 15px;
+  background-color: var(--color-base);
+  border-radius: 10px;
+}
+
+.tab_item label:hover {
+  background-color: var(--color-point);
+  color: var(--color-text-simple);
+}
+
+.menu {
+  display: none;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .header_box {
+    flex-direction: column;
+    height: 30vh;
+  }
+
+  .search_bar {
+    width: 100%;
+    /* display: none; */
+  }
+  .loginInfo_box {
+    width: 100%;
+    /* display: none; */
+  }
+  .loginInfo_box div,
+  span,
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo_box {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .menu {
+    display: block;
+  }
+  .login_box {
+    height: 60vh;
+    width: 70vw;
+  }
+  .content_box {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .cat_image {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .login_btn {
+    width: 27vw;
+    height: 35px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 60vw;
+    height: 25px;
+  }
 }
