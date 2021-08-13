@@ -1,19 +1,44 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Style.css";
 
-import Main from "./components/main/Main";
+import DashBoard from "./components/main/DashBoard";
 import PageNotFound from "./components/common/PageNotFound";
 import SignIn from "./components/main/SignIn";
+import Header from "./components/header/Header";
 
 const App = (props: any) => {
+  const [hasHeader, setHasHeader] = useState<boolean>(true);
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/signIn" component={SignIn} />
-        <Route component={PageNotFound} />
-      </Switch>
-    </Router>
+    <main className="main flex_row">
+      <div className="flex_column">
+        <Router>
+          {hasHeader && <Header />}
+          <article className="content_box">
+            <div style={{ margin: " 25px" }}>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => (
+                    <DashBoard {...props} setHasHeader={setHasHeader} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/signIn"
+                  render={(props) => (
+                    <SignIn {...props} setHasHeader={setHasHeader} />
+                  )}
+                />
+
+                <Route component={PageNotFound} />
+              </Switch>
+            </div>
+          </article>
+        </Router>
+      </div>
+    </main>
   );
 };
 
