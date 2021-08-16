@@ -2,8 +2,11 @@
 
 :root {
   --color-base: #ffffff;
+  --color-base-blur: #ffffff80;
   --color-point: #b301aa;
+  --color-point-blur: #b301aa80;
   --color-1st-point: #e7824c;
+  --color-1st-point-blur: #e7824c80;
   --color-2bd-point: #dd564a;
   --color-3bd-point: #cb1452;
   --color-4th-point: #c00266;
@@ -188,10 +191,23 @@ button:hover {
 .search_bar {
   background-color: var(--color-base);
   text-align: center;
+  width: 40vw;
+  display: flex;
+  height: 4vh;
+}
+.search_bar input[type="text"] {
+  width: 85%;
+
+  border-radius: 10px;
+  border: var(--color-2bd-point) solid 2px;
+}
+.search_bar button {
+  width: 15%;
+  border-radius: 10px;
 }
 
 .loginInfo_box {
-  width: 100%;
+  width: 90%;
   background-color: var(--color-base);
   text-align: center;
   width: 15vw;
@@ -229,12 +245,55 @@ button:hover {
 .grid_item:nth-child(5n) {
   background-color: var(--color-5th-point);
 }
+.post_section {
+  border: var(--color-base) solid 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 55vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+.post_section::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+.post_conteiner {
+  width: 45%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+  margin: 1rem;
+  overflow: hidden;
+}
+.post_conteiner:hover {
+  border: var(--color-point) solid 2px;
+}
 
+.post_img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+.post_img img {
+  width: 30vw;
+}
 .post_title {
-  font-size: 1.2em;
+  padding: 1rem;
 }
 .post_contents {
-  font-size: 1em;
+  padding: 1rem;
+}
+.post_writer {
+  padding: 0.625rem 1rem;
+  border-top: 1px solid rgb(248, 249, 250);
+  display: flex;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 }
 
 .tab_conteiner {
@@ -264,6 +323,9 @@ button:hover {
   text-align: center;
 }
 
+.chart canvas {
+  width: 30vw;
+}
 @media only screen and (max-width: 768px) {
   .header_box {
     flex-direction: column;

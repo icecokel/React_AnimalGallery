@@ -44,40 +44,38 @@ const SignIn = (props: any) => {
   };
 
   return (
-    <div className="content_box">
-      <div className="login_box center">
-        <img src={Cat} className="cat_image" />
-        <h2>Login Animal Gallery</h2>
-        <ErrorMessage
-          text="이메일 또는 패스워드가 일치 하지 않습니다."
-          isShowing={errorMessage.account}
+    <div className="login_box center">
+      <img src={Cat} className="cat_image" alt="로그인화면" />
+      <h2>Login Animal Gallery</h2>
+      <ErrorMessage
+        text="이메일 또는 패스워드가 일치 하지 않습니다."
+        isShowing={errorMessage.account}
+      />
+      <div>
+        <input
+          type="email"
+          className="input_id"
+          placeholder="Enter Your Email..."
+          onChange={(e: any) => {
+            const { value } = e.target;
+            setAccountInfo({ ...accountInfo, email: value });
+          }}
         />
-        <div>
-          <input
-            type="email"
-            className="input_id"
-            placeholder="Enter Your Email..."
-            onChange={(e: any) => {
-              const { value } = e.target;
-              setAccountInfo({ ...accountInfo, email: value });
-            }}
-          />
-          <input
-            type="password"
-            className="input_id"
-            placeholder="Enter Your Password..."
-            onChange={(e) => {
-              const { value } = e.target;
-              setAccountInfo({ ...accountInfo, password: value });
-            }}
-          />
-        </div>
-        <div className="btn_box">
-          <button className="login_btn" onClick={onClickSignIn}>
-            sign in
-          </button>
-          <button className="login_btn">sign up</button>
-        </div>
+        <input
+          type="password"
+          className="input_id"
+          placeholder="Enter Your Password..."
+          onChange={(e) => {
+            const { value } = e.target;
+            setAccountInfo({ ...accountInfo, password: value });
+          }}
+        />
+      </div>
+      <div className="btn_box">
+        <button className="login_btn" onClick={onClickSignIn}>
+          sign in
+        </button>
+        <button className="login_btn">sign up</button>
       </div>
     </div>
   );

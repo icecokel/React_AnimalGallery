@@ -1,10 +1,30 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import LoginSessionUtil from "../../util/LoginSessionUtil";
-import Tabs from "./Tabs";
 
+import LoginSessionUtil from "../../util/LoginSessionUtil";
+
+const defaultData = {
+  tabList: [
+    { title: "CATS", tag: ["cats"] },
+    { title: "DOGS", tag: ["dogs"] },
+    { title: "FOXS", tag: ["foxs"] },
+    { title: "ETC", tag: ["etc"] },
+  ],
+};
 const Header = (props: any) => {
+  const history = useHistory();
+  const [tabList] = useState<Array<any>>(defaultData.tabList);
+  useEffect(() => {}, [tabList]);
+
+  const onClickTab = (e: any) => {
+    const { innerText } = e.target;
+    if (innerText !== "ETC") {
+      const info = tabList.find((info) => info.title === innerText);
+
+      history.push("/gallery/" + innerText, { tag: info.tag });
+    }
+  };
   return (
     <>
       <header className="header_box">
@@ -12,7 +32,23 @@ const Header = (props: any) => {
         <SearchBar />
         <SignInInfo />
       </header>
-      <Tabs />
+      <nav>
+        <ul className="tab_conteiner">
+          {tabList.map((item) => {
+            return (
+              <li className="tab_item">
+                <label
+                  onClick={(e) => {
+                    onClickTab(e);
+                  }}
+                >
+                  {item.title}
+                </label>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </>
   );
 };
@@ -20,8 +56,9 @@ const Header = (props: any) => {
 const Logo = (props: any) => {
   const history = useHistory();
   const onClickMenu = () => {
-    const searchBar = document.getElementsByClassName("search_bar");
-    const loginInfoBox = document.getElementsByClassName("loginInfo_box");
+    // TODO :: 모바일 환경 작업 필요
+    // const searchBar = document.getElementsByClassName("search_bar");
+    // const loginInfoBox = document.getElementsByClassName("loginInfo_box");
   };
   return (
     <div className="logo_box">
@@ -40,7 +77,12 @@ const Logo = (props: any) => {
 };
 
 const SearchBar = () => {
-  return <div className="search_bar"> 검색창</div>;
+  return (
+    <div className="search_bar">
+      <input type="text" placeholder="검색어를 입력해 주세요" name="" id="" />
+      <button>검색</button>
+    </div>
+  );
 };
 const SignInInfo = (props: any) => {
   const history = useHistory();

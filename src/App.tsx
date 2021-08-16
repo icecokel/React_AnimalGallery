@@ -6,6 +6,7 @@ import DashBoard from "./components/main/DashBoard";
 import PageNotFound from "./components/common/PageNotFound";
 import SignIn from "./components/main/SignIn";
 import Header from "./components/header/Header";
+import Gallery from "./components/main/Gallery";
 
 const App = (props: any) => {
   const [hasHeader, setHasHeader] = useState<boolean>(true);
@@ -29,6 +30,13 @@ const App = (props: any) => {
                   path="/signIn"
                   render={(props) => (
                     <SignIn {...props} setHasHeader={setHasHeader} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/gallery/:kind"
+                  render={(props) => (
+                    <Gallery {...props} setHasHeader={setHasHeader} />
                   )}
                 />
 
