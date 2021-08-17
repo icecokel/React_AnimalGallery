@@ -4,8 +4,16 @@
       "width": 4,
       "height": 6,
       "tag": ["cats"],
-      "url": "https://tse3.mm.bing.net/th?id=OIP.z8DJQUbeCPJfc_7yjtyidAHaE7&pid=Api&P=0&w=265&h=178",
+      "url": "../../asset/images/cat1.jpg",
       "title": "태그가 하나인 고양이",
+      "contents": "야옹"
+    },
+    {
+      "width": 4,
+      "height": 6,
+      "tag": ["cats"],
+      "url": "https://tse3.mm.bing.net/th?id=OIP.z8DJQUbeCPJfc_7yjtyidAHaE7&pid=Api&P=0&w=265&h=178",
+      "title": "태그가 하나인 고양이 복사",
       "contents": "야옹"
     },
     {

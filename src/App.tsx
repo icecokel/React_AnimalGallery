@@ -6,7 +6,7 @@ import DashBoard from "./components/main/DashBoard";
 import PageNotFound from "./components/common/PageNotFound";
 import SignIn from "./components/main/SignIn";
 import Header from "./components/header/Header";
-import Gallery from "./components/main/Gallery";
+import Gallery from "./components/contents/Gallery";
 
 const App = (props: any) => {
   const [hasHeader, setHasHeader] = useState<boolean>(true);

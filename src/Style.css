@@ -70,7 +70,7 @@ h5 {
 .login_box {
   padding: 5vw;
   height: 60vh;
-  width: 60vh;
+  width: 50vw;
   border: var(--color-point) solid 2px;
   display: flex;
   flex-direction: column;
@@ -278,7 +278,7 @@ button:hover {
   position: relative;
 }
 .post_img img {
-  width: 30vw;
+  width: 20vw;
 }
 .post_title {
   padding: 1rem;
@@ -322,10 +322,17 @@ button:hover {
   padding: 8px 12px;
   text-align: center;
 }
-
-.chart canvas {
-  width: 30vw;
+.dashboard_box {
+  display: flex;
+  flex-direction: column;
 }
+
+.chart {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .header_box {
     flex-direction: column;
