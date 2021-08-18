@@ -15,7 +15,7 @@ const App = (props: any) => {
       <div className="flex_column">
         <Router>
           {hasHeader && <Header />}
-          <article className="content_box">
+          <section className="content_box">
             <div style={{ margin: " 25px" }}>
               <Switch>
                 <Route
@@ -43,7 +43,7 @@ const App = (props: any) => {
                 <Route component={PageNotFound} />
               </Switch>
             </div>
-          </article>
+          </section>
         </Router>
       </div>
     </main>
